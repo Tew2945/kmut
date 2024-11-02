@@ -3,9 +3,14 @@ class TodosController < ApplicationController
 
   # GET /todos or /todos.json
   def index
-    @todos = Todo.all
-  end
+    if params[:search].present?
+      @todos = Todo.where("title LIKE ?", "%#{params[:search]}%")
 
+    else @todos = Todo.all
+    end 
+  end
+   
+  
   # GET /todos/1 or /todos/1.json
   def show
   end
@@ -18,6 +23,8 @@ class TodosController < ApplicationController
   # GET /todos/1/edit
   def edit
   end
+
+
 
   # POST /todos or /todos.json
   def create

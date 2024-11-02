@@ -6,7 +6,9 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Completed:</strong>
-    <%= todo.completed === "completed" ? "Completed" : "Not Complete"%>
+      <span class="<%= todo.completed? ? "text-green-600" : "text-red-600" %>">
+        <%= todo.completed === "completed" ? "Completed" : "Not Complete"%>
+      </span>
   </p>
 
 </div>
