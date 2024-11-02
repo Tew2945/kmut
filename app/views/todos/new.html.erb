@@ -1,7 +1,15 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New todo</h1>
+<% content_for :title, "New todo" %>
 
-  <%= render "form", todo: @todo %>
+<section class="block max-w-md w-full mx-auto bg-zinc-50 py-8 px-4 border border-gray-200 rounded-md shadow-sm" >
+    <div class="flex justify-between items-center mb-4">
+      <%= link_to "< Back", todos_path, class: "rounded-lg px-3 py-2 border border-transparent hover:border-orange-600 text-orange-600 w-fit" %>
 
-  <%= link_to "Back to todos", todos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+      <h1 class="text-2xl font-bold text-orange-600">New Todo</h1>
+
+      <div class="w-[78.13px]"></div>
+    </div>
+
+  <section class="ml-4">
+    <%= render "form", todo: @todo %>
+  </section>
+</section>
