@@ -1,16 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<!-- Notice Message -->
+<% if notice %>
+  <p class="notice-message">
+    <%= notice %>
+  </p>
+<% end %>
 
+<!-- Page Title -->
 <% content_for :title, "Todos" %>
+<h1 class="page-title">Todos</h1>
 
-<h1>Todos</h1>
-
-<div id="todos">
+<!-- Todos List Container -->
+<div id="todos" class="todos-container">
   <% @todos.each do |todo| %>
-    <%= render todo %>
-    <p>
-      <%= link_to "Show this todo", todo %>
-    </p>
+    <div class="todo-card">
+      <%= render todo %>
+      <p class="todo-link">
+        <%= link_to "Show this todo", todo, class: "show-todo" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New todo", new_todo_path %>
+<!-- New Todo Button -->
+<div class="new-todo-button">
+  <%= link_to "New Todo", new_todo_path, class: "new-todo-link" %>
+</div>
