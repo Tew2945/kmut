@@ -27,21 +27,8 @@
       </svg>
     <% end %>
   </div>
-
-
-  <form action="<%= todos_path %>" method="get" class="mb-4 flex flex-rows">
-    <input
-      type="text"
-      name="search"
-      placeholder="Search todos by title..."
-      class="border border-gray-300 rounded-md px-3 py-2 w-full"
-      value="<%= params[:search] %>"
-    />
-    <button type="submit" class="mt-2 px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700">
-      Search
-    </button>
-  </form>
   
+<%= render "search" %>
 
   <div id="todos-list" class="flex flex-col gap-1 mt-6">
   <% @todos.each do |todo| %>
